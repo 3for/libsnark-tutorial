@@ -52,6 +52,11 @@ In order to download and build the repo:
 ```
 git clone https://github.com/christianlundkvist/libsnark-tutorial.git
 cd libsnark-tutorial
+
+//To compile this library, start by recursively fetching the dependencies.
+git submodule update --init --recursive
+//Note, the submodules only need to be fetched once.
+
 mkdir build && cd build && cmake ..
 make
 ```
