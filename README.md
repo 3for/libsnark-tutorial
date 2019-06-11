@@ -57,7 +57,10 @@ cd libsnark-tutorial
 git submodule update --init --recursive
 //Note, the submodules only need to be fetched once.
 
+//Next, initialize the build directory.
 mkdir build && cd build && cmake ..
+
+//Lastly, compile the library.
 make
 ```
 
