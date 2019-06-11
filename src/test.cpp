@@ -34,7 +34,8 @@ int main()
   // Allocate variables to protoboard
   // The strings (like "x") are only for debugging purposes
   
-  out.allocate(pb, "out");
+  //Public inputs FIRST. Following private inputs.
+  out.allocate(pb, "out"); //Should allocate `out` variable first, for variables are: `primary`+`auxiliary` split at `set_input_sizes()` position.
   x.allocate(pb, "x");
   sym_1.allocate(pb, "sym_1");
   y.allocate(pb, "y");

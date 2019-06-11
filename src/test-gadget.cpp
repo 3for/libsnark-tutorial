@@ -27,8 +27,8 @@ int main()
   pb_variable<FieldT> x;
 
   // Allocate variables
-
-  out.allocate(pb, "out");
+  //Public inputs FIRST. Following private inputs.
+  out.allocate(pb, "out"); //Should allocate `out` variable first, for variables are: `primary`+`auxiliary` split at `set_input_sizes()` position.
   x.allocate(pb, "x");
 
   // This sets up the protoboard variables
