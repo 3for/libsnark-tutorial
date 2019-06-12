@@ -306,6 +306,8 @@ We won't go into detail here about the meaning of the values `A`, `B`, `C` etc i
 Thus each `G1` point is serialized into two integers and each `G2` point is serialized into four integers. When running the executable `./src/test-gadget` from within the build directory two files will be created: `proof_data` and `vk_data` containing the corresponding data in the form of integer values.
 
 ## Using verification keys and proofs in Solidity
+### Advice by 3for
+This section would be better understood with the help of [circom and snarkjs tutorial](https://github.com/iden3/circom/blob/master/TUTORIAL.md), which generate the `verfier.sol` automatically and more comprehensive.
 
 We first take a look at the Solidity file `src/ethereum/contracts/Verifier.sol` which contains the verification code. This file has two important functions: `setVerifyingKey()` sets the verification key that will be used when verifying a proof and `verifyTx()` submits the proof along with the public inputs and returns `true` if the proof verifies. It is common to hardcode the verification key into the smart contract to save gas - for instance [ZoKrates](https://github.com/JacobEberhardt/ZoKrates) does this - but to simplify testing we use a setter function instead.
 
